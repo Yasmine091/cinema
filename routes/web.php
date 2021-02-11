@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController;
+use App\Http\Resources\FilmCollection;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,7 +20,7 @@ Route::get('/', function () {
 
 
 
-Route::get('/test/{id}', ([UserController::class, 'show']) 
+Route::get('/test', ([FilmCollection::class, 'toArray']) 
 
     /* $montableau = [
         'name' =>'Kuki',
