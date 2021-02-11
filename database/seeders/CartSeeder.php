@@ -17,8 +17,8 @@ class CartSeeder extends Seeder
     public function run()
     {
         DB::table('carts')->insert([
-            'id_user' => '',
-            'id_movie' => '',
+            'id_user' => 1,
+            'id_movie' => 1,
             'status_cart' => 0,
         ]);
     }
