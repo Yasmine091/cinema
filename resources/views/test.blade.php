@@ -1,2 +1,11 @@
+@foreach ($films as $film)
 
-Hi {{ $user->name }}, mdr
+<h1>
+{{ $film->title }}
+</h1>
+
+<p>
+{{ $film->plot }}
+</p>
+
+@endforeach
