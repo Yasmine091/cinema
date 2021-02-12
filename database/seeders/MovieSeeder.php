@@ -16,6 +16,7 @@ class MovieSeeder extends Seeder
      */
     public function run()
     {
+
             DB::table('movies')->insert([
                 'title' => '',
                 'released' => 'date de publication',
