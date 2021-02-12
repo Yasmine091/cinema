@@ -33,3 +33,10 @@ Route::get('/test', ([FilmCollection::class, 'toArray'])
 
 )->name('testing');
 
+Route::get('/reservation', function () {
+    return view('reservation');
+});
+
+Route::get('/hello/{name}', function () {
+    return view('hello');
+});
