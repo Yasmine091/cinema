@@ -1,9 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MovieController;
 
 use App\Http\Controllers\Controller;
-use App\Http\Controllers\MovieController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,9 +20,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/superapi/{title}', ([MovieController::class, 'imdbAPI']) 
 
-Route::get('/movies', 'MovieController@index')->name('index');
-Route::get('/movies/{id}', 'MovieController@show')->name('movies.show');
+)->name('testing');
 
+Route::get('/reservation', function () {
+    return view('reservation');
+});
 
-
+Route::get('/hello/{name}', function () {
+    return view('hello');
+});
