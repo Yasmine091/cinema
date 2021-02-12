@@ -18,8 +18,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
-
 Route::get('/superapi/{title}', ([MovieController::class, 'imdbAPI']) 
 
 )->name('testing');
