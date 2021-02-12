@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Resources\FilmCollection;
 
+use App\Http\Controllers\Controller;
+use App\Http\Controllers\MovieController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,17 +20,8 @@ Route::get('/', function () {
 });
 
 
-
-Route::get('/test', ([FilmCollection::class, 'toArray']) 
-
-    /* $montableau = [
-        'name' =>'Kuki',
-        'msg' => 'welcome to your test page!'
-    ];
-
-    return view('test', $montableau); */
+Route::get('/movies', 'MovieController@index')->name('index');
+Route::get('/movies/{id}', 'MovieController@show')->name('movies.show');
 
 
-
-)->name('testing');
 

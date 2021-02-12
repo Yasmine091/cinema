@@ -17,7 +17,7 @@ class CreateCartsTable extends Migration
             $table->id();
             $table->integer('id_user');
             $table->integer('id_movie');
-            $table->boolean('satus_cart');
+            $table->boolean('status_cart');
         });
     }
 
