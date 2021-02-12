@@ -24,3 +24,10 @@ Route::get('/superapi/{title}', ([MovieController::class, 'imdbAPI'])
 
 )->name('testing');
 
+Route::get('/reservation', function () {
+    return view('reservation');
+});
+
+Route::get('/hello/{name}', function () {
+    return view('hello');
+});
