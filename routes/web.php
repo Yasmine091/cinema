@@ -20,7 +20,7 @@ Route::get('/', function () {
 
 
 
-Route::get('/test', ([FilmCollection::class, 'toArray']) 
+Route::get('/test', ([FilmCollection::class, 'toArray'])
 
     /* $montableau = [
         'name' =>'Kuki',
