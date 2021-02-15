@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Controller;
 use App\Http\Controllers\MovieController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,14 +20,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/superapi/{title}', ([MovieController::class, 'imdbAPI']) 
-
+Route::get('/test/{title}', ([MovieController::class, 'imdbAPI'])
+    
 )->name('testing');
 
-Route::get('/reservation', function () {
-    return view('reservation');
-});
+Route::get('/add/{imdbID}', ([MovieController::class, 'movieFromAPI'])
+    
+)->name('saving');
 
-Route::get('/hello/{name}', function () {
-    return view('hello');
-});
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
