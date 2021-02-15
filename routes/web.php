@@ -20,9 +20,9 @@ Route::get('/', function () {
 
 
 
-Route::get('/superapi/{title}', ([MovieController::class, 'imdbAPI']) 
+Route::get('/movie/{title}', ([MovieController::class, 'imdbAPI']) 
 
-)->name('testing');
+)->name('test');
 
 Route::get('/reservation', function () {
     return view('reservation');

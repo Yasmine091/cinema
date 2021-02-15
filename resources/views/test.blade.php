@@ -1,11 +1,9 @@
-@foreach ($films as $film)
-
 <h1>
-{{ $film->title }}
+{{ $movie['Title']}
 </h1>
 
 <p>
-{{ $film->plot }}
+{{ $movie['Plot']}}
 </p>
 
 @endforeach
