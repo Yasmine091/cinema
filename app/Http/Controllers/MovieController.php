@@ -9,9 +9,9 @@ use Illuminate\Support\Facades\DB;
 class MovieController extends Controller
 {
 
-    public function imdbAPI($title){
+    public function imdbAPI($title, $page){
 
-        $response = Http::get('http://www.omdbapi.com/?s=' . $title . '&plot=full&type=movie&page=1&apikey=783d5d3b');
+        $response = Http::get('http://www.omdbapi.com/?s=' . $title . '&type=movie&page=' . $page . '&apikey=783d5d3b');
         return view('test', ['movies' => $response->json()]);
         
     }

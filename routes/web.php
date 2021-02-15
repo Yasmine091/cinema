@@ -20,7 +20,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/test/{title}', ([MovieController::class, 'imdbAPI'])
+Route::get('/movies/{title}/{page}', ([MovieController::class, 'imdbAPI'])
     
 )->name('testing');
 
