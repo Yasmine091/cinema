@@ -26,12 +26,10 @@ Route::get('/superapi/{title}', ([MovieController::class, 'imdbAPI'])
 
 )->name('testing');
 
-<<<<<<< HEAD
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-=======
 Route::get('/reservation', function () {
     return view('reservation');
 });
@@ -39,4 +37,3 @@ Route::get('/reservation', function () {
 Route::get('/hello/{name}', function () {
     return view('hello');
 });
->>>>>>> 05a3728f0213d175fc3d5c84f4ecbfa0b94bdde7
