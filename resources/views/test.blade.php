@@ -1,9 +1,7 @@
 <h1>
-{{ $movie['Title']}
+{{ $movies['Title']}}
 </h1>
 
 <p>
-{{ $movie['Plot']}}
+{{ $movies['Plot']}}
 </p>
-
-@endforeach

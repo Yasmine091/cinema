@@ -11,7 +11,7 @@ class MovieController extends Controller
 
     public function imdbAPI($title){
 
-        $response = Http::GET('http://www.omdbapi.com/?t='.$title.'&plot=movie&page=783d5d3b');
+        $response = Http::GET('http://www.omdbapi.com/?t='.$title.'&plot=movie&page=1&apikey=783d5d3b');
         return view('test', ['movies' => $response -> json()]);
 
     }

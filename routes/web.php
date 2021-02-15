@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MovieController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,7 +21,7 @@ Route::get('/', function () {
 
 
 
-Route::get('/movie/{title}', ([MovieController::class, 'imdbAPI']) 
+Route::get('/movie/{title}', ([MovieController::class, 'imdbAPI'])
 
 )->name('test');
 
