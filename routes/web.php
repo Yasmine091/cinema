@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Controller;
 use App\Http\Controllers\MovieController;
 use Illuminate\Support\Facades\Auth;
 
@@ -19,19 +20,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/movies/{title}/{page}', ([MovieController::class, 'imdbAPI'])
 
+)->name('testing');
 
-Route::get('/movie/{title}', ([MovieController::class, 'imdbAPI'])
+Route::get('/add/{imdbID}', ([MovieController::class, 'movieFromAPI'])
 
-)->name('test');
-
-Route::get('/reservation', function () {
-    return view('reservation');
-});
-
-Route::get('/hello/{name}', function () {
-    return view('hello');
-});
+)->name('saving');
 
 Auth::routes();
 

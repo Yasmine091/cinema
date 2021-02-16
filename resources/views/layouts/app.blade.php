@@ -18,6 +18,11 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+<<<<<<< HEAD
+=======
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+>>>>>>> 1529d7d72c0e88f7135cfc049f4d29ec204e5742
 </head>
 <body>
     <div id="app">

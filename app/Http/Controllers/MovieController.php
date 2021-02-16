@@ -9,18 +9,18 @@ use Illuminate\Support\Facades\DB;
 class MovieController extends Controller
 {
 
-    public function imdbAPI($title){
+    public function imdbAPI($title, $page){
 
-        $response = Http::GET('http://www.omdbapi.com/?t='.$title.'&plot=movie&page=1&apikey=783d5d3b');
-        return view('test', ['movies' => $response -> json()]);
+        $response = Http::get('http://www.omdbapi.com/?s=' . $title . '&type=movie&page=' . $page . '&apikey=783d5d3b');
+        return view('test', ['movies' => $response->json()]);
 
     }
 
-    public function movieFromAPI($imdbID) {
+    public function movieFromAPI($imdbID){
 
-        $response = Http::GET('http://www.omdbapi.com/?i=' . $imdbID . '&plot=movie&apikey=783d5d3b');
+        $response = Http::get('http://www.omdbapi.com/?i=' . $imdbID . '&plot=full&type=movie&apikey=783d5d3b');
 
-        DB::table('movies') -> insert ([
+        DB::table('movies')->insert([
             'title' => $response['Title'],
             'released' => $response['Released'],
             'plot' => $response['Plot'],
@@ -29,6 +29,10 @@ class MovieController extends Controller
             'status' => 0,
             'imdbID' => $response['imdbID'],
         ]);
+
+        return view('welcome');
+        ;
+
     }
 
-};
+}

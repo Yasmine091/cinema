@@ -6,6 +6,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Http;
 
 class MovieSeeder extends Seeder
 {
@@ -17,14 +18,16 @@ class MovieSeeder extends Seeder
     public function run()
     {
 
-            DB::table('movies')->insert([
-                'title' => '',
-                'released' => 'date de publication',
-                'plot' => 'resume',
-                'runtime' => 'duree',
-                'poster' => 'affiche',
-                'status' => 0,
-                'imdbID' => 'tt005489',
-            ]);
+        $response = Http::get('http://www.omdbapi.com/?t=titanic&plot=full&apikey=783d5d3b');
+        
+        DB::table('movies')->insert([
+            'title' => $response['Title'],
+            'released' => $response['Released'],
+            'plot' => $response['Plot'],
+            'runtime' => $response['Runtime'],
+            'poster' => $response['Poster'],
+            'status' => 0,
+            'imdbID' => $response['imdbID'],
+        ]);
     }
 }
