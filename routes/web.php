@@ -20,6 +20,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::fallback(function() {
+    return view('404'); // la vue
+ });
+
 Route::get('/movies/{title}/{page}', ([MovieController::class, 'imdbAPI'])
 
 )->name('testing');
@@ -27,6 +31,10 @@ Route::get('/movies/{title}/{page}', ([MovieController::class, 'imdbAPI'])
 Route::get('/add/{imdbID}', ([MovieController::class, 'movieFromAPI'])
 
 )->name('saving');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Auth::routes();
 
