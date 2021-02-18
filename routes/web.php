@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\MovieController;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Routing\Redirector;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,11 +19,13 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
     return view('welcome');
-});
+}
+)->name('redirecting');
 
 Route::fallback(function() {
     return view('404'); // la vue
  });
+
 
 Route::get('/movies/{title}/{page}', ([MovieController::class, 'imdbAPI'])
 
