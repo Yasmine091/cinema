@@ -9,6 +9,12 @@ use Illuminate\Support\Facades\DB;
 class MovieController extends Controller
 {
 
+    public function getMovie($id){
+
+        $movie = DB::table('movies')->where('id', $id)->get();
+        return view('movie', ['movie' => $movie]);
+    }
+
     public function imdbAPI($title, $page){
 
         $response = Http::get('http://www.omdbapi.com/?s=' . $title . '&type=movie&page=' . $page . '&apikey=783d5d3b');

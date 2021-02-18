@@ -20,7 +20,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/movies/{title}/{page}', ([MovieController::class, 'imdbAPI'])
+Route::get('/api-movies/{title}/{page}', ([MovieController::class, 'imdbAPI'])
     
 )->name('testing');
 
@@ -31,3 +31,7 @@ Route::get('/add/{imdbID}', ([MovieController::class, 'movieFromAPI'])
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/movie/{id}', ([MovieController::class, 'getMovie'])
+    
+)->name('movie');

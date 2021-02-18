@@ -20,6 +20,7 @@ class CreateMoviesTable extends Migration
             $table->text('plot');
             $table->string('runtime');
             $table->text('poster');
+            $table->string('price');
             $table->boolean('status');
             $table->string('imdbID');
             $table->timestamps();
