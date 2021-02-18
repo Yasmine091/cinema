@@ -1,7 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Controller;
 use App\Http\Controllers\MovieController;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Routing\Redirector;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,16 +19,26 @@ use App\Http\Controllers\MovieController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+}
+)->name('redirecting');
 
-Route::get('/superapi/{title}', ([MovieController::class, 'imdbAPI']) 
+Route::fallback(function() {
+    return view('404'); // la vue
+ });
+
+
+Route::get('/movies/{title}/{page}', ([MovieController::class, 'imdbAPI'])
 
 )->name('testing');
 
-Route::get('/reservation', function () {
-    return view('reservation');
-});
+Route::get('/add/{imdbID}', ([MovieController::class, 'movieFromAPI'])
 
-Route::get('/hello/{name}', function () {
-    return view('hello');
-});
+)->name('saving');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
