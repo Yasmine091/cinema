@@ -1,4 +1,6 @@
+@extends('layouts.app')
 
+@section('content')
 
 @for($i = 0; $i < count($movies); $i++)
 
@@ -12,7 +14,7 @@
 
 <form method="GET" action="/add/{{ $movies['Search'][$i]['imdbID'] }}">
 
-<button type="submit" class="button is-success">
+<button type="submit" class="btn btn-success">
 Ajouter a la BDD
 </button>
 
@@ -20,3 +22,7 @@ Ajouter a la BDD
 
 @endfor
 
+<a href="" class="btn btn-info">Previous page</a>
+<a href="" class="btn btn-info">Next page</a>
+
+@endsection

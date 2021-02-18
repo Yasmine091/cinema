@@ -18,7 +18,7 @@ class MovieSeeder extends Seeder
     public function run()
     {
 
-        $response = Http::get('http://www.omdbapi.com/?t=titanic&plot=full&apikey=783d5d3b');
+        $response = Http::get('http://www.omdbapi.com/?t=Kureyon Shinchan: Buriburi Ôkoku no hihô&plot=full&apikey=783d5d3b');
         
         DB::table('movies')->insert([
             'title' => $response['Title'],
@@ -26,6 +26,7 @@ class MovieSeeder extends Seeder
             'plot' => $response['Plot'],
             'runtime' => $response['Runtime'],
             'poster' => $response['Poster'],
+            'price' => '9.90',
             'status' => 0,
             'imdbID' => $response['imdbID'],
         ]);
