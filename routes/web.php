@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\MovieController;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Foundation\Auth\User;
 
 /*
 |--------------------------------------------------------------------------
