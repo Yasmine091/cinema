@@ -73,7 +73,7 @@ class MovieController extends AdminController
     {
         $form = new Form(new Movie());
 
-        $form->text('title', __('Title'));
+        // $form->text('title', __('Title'));
         $form->text('released', __('Released'));
         $form->textarea('plot', __('Plot'));
         $form->text('runtime', __('Runtime'));
