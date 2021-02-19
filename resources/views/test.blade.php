@@ -2,10 +2,12 @@
 
 @section('content')
 
-@for($i = 0; $i < count($movies); $i++)
+@for($i = 0; $i < count($movies); $i++){
+
+}
 
 <h1>
-{{ $movies['Search'][$i]['Title'] }}
+    {{ $movies['Search'][$i]['Title'] }}
 </h1>
 
 <p>

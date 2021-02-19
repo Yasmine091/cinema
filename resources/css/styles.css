@@ -21,3 +21,8 @@
 .text-dblue {
     color: #0F2F43;
 }
+
+.movie-img {
+    max-height: 10rem !important;
+    object-fit: cover;
+}

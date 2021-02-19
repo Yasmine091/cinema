@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container text-dblue">
+<div class="container text-dblue py-3">
     <div class="d-flex justify-content-between">
         <nav aria-label="breadcrumb d-block">
             <ol class="breadcrumb bg-transparent py-2">
@@ -9,7 +9,8 @@
             </ol>
         </nav>
 
-        <form class="form-inline d-block" method="GET" action="/search/{{ request()->input('searchTerm') }}">
+        <form class="form-inline d-block" method="GET" role="search" action="javascript:
+                window.location.replace('/search/' + document.getElementById('searchTerm').value)">
             <div class="input-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text bg-transparent border-right-0" id="basic-addon1"><i class="fas fa-search"></i></span>
@@ -40,7 +41,11 @@
                         <div class="font-weight-bolder d-block w-100 text-right">{{ $mov->price }} €</div>
                     </div>
                     <input type="hidden" name="movieID" id="movieID" value="{{ $mov->id }}">
+                    @if ($mov->status === 1)
                     <input class="btn btn-outline-primary w-100 text-dblue border-dblue" type="submit" name="rentMovie" id="rentMovie" value="Réserver maintenant">
+                    @else
+                    <input class="btn btn-outline-primary w-100 text-dblue border-dblue" type="submit" name="rentMovie" id="rentMovie" value="Réserver maintenant" disabled>
+                    @endif
                 </div>
 
                 <div class="col-md-9">

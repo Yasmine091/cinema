@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container py-3">
     <div class="row">
         <div class="col">
             <h1 class="display-2">ERROR 404</h1> <br>

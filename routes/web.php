@@ -19,7 +19,7 @@ use Illuminate\Foundation\Auth\User;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('movies');
 }
 )->name('redirecting');
 
@@ -42,10 +42,14 @@ Route::get('/home', function() {
     
 })->name('home');
 
+Route::get('/', ([MovieController::class, 'getMoviesByFilter'])
+    
+)->name('movies');
+
 Route::get('/movie/{id}', ([MovieController::class, 'getMovie'])
     
 )->name('movie');
 
 Route::get('/search/{term}', ([MovieController::class, 'searchMovie'])
-    
+
 )->name('search');

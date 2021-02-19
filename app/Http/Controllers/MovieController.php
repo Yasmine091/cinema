@@ -5,14 +5,31 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Pagination\Paginator;
 
 class MovieController extends Controller
 {
 
     public function searchMovie($term){
 
-        $movies = DB::table('movies')->where('title', 'like', $term)->orWhere('plot', 'like', $term)->get();
+        $movies = DB::table('movies')
+        ->where('title', 'like', "%{$term}%")
+        ->orWhere('plot', 'like', "%{$term}%")
+        ->paginate(12);
+
+        Paginator::useBootstrap();
+
         return view('search', ['movies' => $movies]);
+    }
+
+    public function getMoviesByFilter(){
+
+        $movies = DB::table('movies')
+        ->paginate(12);
+
+        Paginator::useBootstrap();
+
+        return view('movies', ['movies' => $movies]);
     }
 
     public function getMovie($id){
@@ -38,6 +55,7 @@ class MovieController extends Controller
             'plot' => $response['Plot'],
             'runtime' => $response['Runtime'],
             'poster' => $response['Poster'],
+            'price' => 0,
             'status' => 0,
             'imdbID' => $response['imdbID'],
         ]);

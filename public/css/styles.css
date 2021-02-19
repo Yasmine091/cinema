@@ -21,3 +21,16 @@
 .text-dblue {
     color: #0F2F43;
 }
+
+.movie-img {
+    max-height: 10rem !important;
+    -o-object-fit: cover;
+       object-fit: cover;
+}
+
+.header-img {
+    object-fit: cover;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('../img/header.jpg');
+    background-position: center;
+    background-size: cover;
+}
