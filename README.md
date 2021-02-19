@@ -29,6 +29,6 @@
 * https://proj4.crealivity.eu
 
 ## Ressources du projet
-* Maquettes: 
+* Maquettes: https://gitlab.com/Yasmine091/cinema/-/tree/master/maquettes
 * Use Case: https://lucid.app/lucidchart/67f94bdc-a320-4d12-8667-2f6fbe623e3c/view?page=FqmdDlvRQNwj#
 * MPD: https://lucid.app/lucidchart/67f94bdc-a320-4d12-8667-2f6fbe623e3c/view?page=0_0#
