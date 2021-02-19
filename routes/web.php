@@ -1,7 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\Controller;
+use App\Http\Controllers\MovieController;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Routing\Redirector;
+use Illuminate\Foundation\Auth\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,21 +19,37 @@ use App\Http\Controllers\UserController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('movies');
+}
+)->name('redirecting');
+
+Route::fallback(function() {
+    return view('404'); // la vue
+ });
 
 
-
-Route::get('/test/{id}', ([UserController::class, 'show']) 
-
-    /* $montableau = [
-        'name' =>'Kuki',
-        'msg' => 'welcome to your test page!'
-    ];
-
-    return view('test', $montableau); */
-
-
+Route::get('/movies/{title}/{page}', ([MovieController::class, 'imdbAPI'])
 
 )->name('testing');
 
+Route::get('/add/{imdbID}', ([MovieController::class, 'movieFromAPI'])
+
+)->name('saving');
+
+Auth::routes();
+
+Route::get('/home', function() {
+    
+})->name('home');
+
+Route::get('/', ([MovieController::class, 'getMoviesByFilter'])
+    
+)->name('movies');
+
+Route::get('/movie/{id}', ([MovieController::class, 'getMovie'])
+    
+)->name('movie');
+
+Route::get('/search/{term}', ([MovieController::class, 'searchMovie'])
+
+)->name('search');
