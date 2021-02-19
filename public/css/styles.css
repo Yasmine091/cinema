@@ -1,0 +1,23 @@
+.bg-lgray {
+    background-color: #FCFCFC;
+}
+
+.bg-lblue {
+    background-color: #A1CFE5;
+}
+
+.bg-dblue {
+    background-color: #0F2F43;
+}
+
+.border-dblue {
+    border: solid #0F2F43;
+}
+
+.text-lblue {
+    color: #A1CFE5;
+}
+
+.text-dblue {
+    color: #0F2F43;
+}

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\MovieController;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Routing\Redirector;
 use Illuminate\Foundation\Auth\User;
 
 /*
@@ -19,20 +20,32 @@ use Illuminate\Foundation\Auth\User;
 
 Route::get('/', function () {
     return view('welcome');
-});
+}
+)->name('redirecting');
+
+Route::fallback(function() {
+    return view('404'); // la vue
+ });
+
 
 Route::get('/movies/{title}/{page}', ([MovieController::class, 'imdbAPI'])
-    
+
 )->name('testing');
 
 Route::get('/add/{imdbID}', ([MovieController::class, 'movieFromAPI'])
-    
+
 )->name('saving');
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', function() {
+    
+})->name('home');
 
-Auth::routes();
+Route::get('/movie/{id}', ([MovieController::class, 'getMovie'])
+    
+)->name('movie');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/search/{term}', ([MovieController::class, 'searchMovie'])
+    
+)->name('search');
