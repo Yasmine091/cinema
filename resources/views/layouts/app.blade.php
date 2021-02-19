@@ -51,11 +51,11 @@
                         <ul class="navbar-nav mr-auto">
 
                             <li class="nav-item">
-                                <a class="nav-link text-dblue" href="">Accueil</a>
+                                <a class="nav-link text-dblue" href="/">Accueil</a>
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link text-dblue" href="">Panier
+                                <a class="nav-link text-dblue" href="/">Panier
                                     <span class="badge badge-danger font-weight-bolder">0</span>
                                 </a>
                             </li>

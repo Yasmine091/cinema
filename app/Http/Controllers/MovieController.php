@@ -9,6 +9,12 @@ use Illuminate\Support\Facades\DB;
 class MovieController extends Controller
 {
 
+    public function searchMovie($term){
+
+        $movies = DB::table('movies')->where('title', 'like', $term)->orWhere('plot', 'like', $term)->get();
+        return view('search', ['movies' => $movies]);
+    }
+
     public function getMovie($id){
 
         $movie = DB::table('movies')->where('id', $id)->get();

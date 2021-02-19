@@ -9,12 +9,12 @@
             </ol>
         </nav>
 
-        <form class="form-inline d-block">
+        <form class="form-inline d-block" method="GET" action="/search/{{ request()->input('searchTerm') }}">
             <div class="input-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text bg-transparent border-right-0" id="basic-addon1"><i class="fas fa-search"></i></span>
                 </div>
-                <input type="text" class="bg-transparent form-control border-left-0" placeholder="Rechercher">
+                <input type="text" name="searchTerm" id="searchTerm" class="bg-transparent form-control border-left-0" placeholder="Rechercher">
             </div>
         </form>
 

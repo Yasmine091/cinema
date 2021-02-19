@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\MovieController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Routing\Redirector;
+use Illuminate\Foundation\Auth\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,8 +38,14 @@ Route::get('/add/{imdbID}', ([MovieController::class, 'movieFromAPI'])
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', function() {
+    
+})->name('home');
 
 Route::get('/movie/{id}', ([MovieController::class, 'getMovie'])
     
 )->name('movie');
+
+Route::get('/search/{term}', ([MovieController::class, 'searchMovie'])
+    
+)->name('search');
