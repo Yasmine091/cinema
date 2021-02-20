@@ -54,11 +54,13 @@
                                 <a class="nav-link text-dblue" href="/">Accueil</a>
                             </li>
 
+                            @if (!Route::has('login') && !Route::has('register'))
                             <li class="nav-item">
                                 <a class="nav-link text-dblue" href="/">Panier
                                     <span class="badge badge-danger font-weight-bolder">0</span>
                                 </a>
                             </li>
+                            @endif
 
                         </ul>
 
@@ -100,7 +102,7 @@
         </main>
 
         <footer>
-            <div class="fixed-bottom">
+            <div class="fixed-bottom m-0">
                 <nav class="navbar navbar-expand-lg bg-dblue text-lblue font-weight-bolder mt-5 shadow-sm">
 
                     <div class="container-fluid">
