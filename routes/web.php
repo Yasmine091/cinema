@@ -18,6 +18,10 @@ use Illuminate\Foundation\Auth\User;
 |
 */
 
+Route::get('/storage/{extra}', function ($extra) {
+    return redirect('/public/storage/'.$extra);
+})->where('extra', '.*');
+
 Route::get('/', function () {
     return view('movies');
 }
@@ -26,7 +30,6 @@ Route::get('/', function () {
 Route::fallback(function() {
     return view('404'); // la vue
  });
-
 
 Route::get('/movies/{title}/{page}', ([MovieController::class, 'imdbAPI'])
 
