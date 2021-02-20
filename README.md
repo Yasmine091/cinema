@@ -29,6 +29,7 @@
 * http://cinema-tchitcha.herokuapp.com/
 
 ## Ressources du projet
+* Trello : https://trello.com/b/owDJxa4g/cin%C3%A9maa-tchi-tcha
 * Maquettes: https://gitlab.com/Yasmine091/cinema/-/tree/master/maquettes
 * Use Case: https://lucid.app/lucidchart/67f94bdc-a320-4d12-8667-2f6fbe623e3c/view?page=FqmdDlvRQNwj#
 * MPD: https://lucid.app/lucidchart/67f94bdc-a320-4d12-8667-2f6fbe623e3c/view?page=0_0#
