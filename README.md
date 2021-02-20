@@ -26,7 +26,7 @@
 * FontAwesome Icons
 
 ## Version en ligne
-* https://proj4.crealivity.eu
+* http://cinema-tchitcha.herokuapp.com/
 
 ## Ressources du projet
 * Maquettes: https://gitlab.com/Yasmine091/cinema/-/tree/master/maquettes
