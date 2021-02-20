@@ -45,9 +45,13 @@ Route::get('/home', function() {
     
 })->name('home');
 
-Route::get('/', ([MovieController::class, 'getMoviesByFilter'])
+Route::get('/', ([MovieController::class, 'getMovies'])
     
 )->name('movies');
+
+Route::get('/sortBy/{filter}', ([MovieController::class, 'getMoviesByFilter'])
+    
+)->name('sort');
 
 Route::get('/movie/{id}', ([MovieController::class, 'getMovie'])
     

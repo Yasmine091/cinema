@@ -22,15 +22,26 @@ class MovieController extends Controller
         return view('search', ['movies' => $movies]);
     }
 
-    public function getMoviesByFilter(){
+    public function getMoviesByFilter($filter){
 
-        $movies = DB::table('movies')
-        ->paginate(12);
+            $movies = DB::table('movies')
+            ->orderBy($filter, 'asc')
+            ->paginate(12);
 
         Paginator::useBootstrap();
 
         return view('movies', ['movies' => $movies]);
     }
+
+    public function getMovies(){
+
+        $movies = DB::table('movies')
+        ->paginate(12);
+
+    Paginator::useBootstrap();
+
+    return view('movies', ['movies' => $movies]);
+}
 
     public function getMovie($id){
 
